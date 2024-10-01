@@ -20,8 +20,17 @@ public class ChoosePlace {
                 Click.on(AirbnbHomePage.CHECKOUT_DATE_BOX),
                 Click.on(AirbnbHomePage.CHECKOUT_DATE_INPUT),
                 Click.on(AirbnbHomePage.GUESTS_BOX),
-                Click.on(AirbnbHomePage.ADD_ADULT_BUTTON)
+                Click.on(AirbnbHomePage.ADD_ADULT_BUTTON),
+                Click.on(AirbnbHomePage.SEARCH_BUTTON)
                 );
+
+    }
+
+    public static Performable with(String location) {
+        return Task.where("choose place at " + location,
+                Enter.theValue(location).into(AirbnbHomePage.PLACE_INPUT),
+                Click.on(AirbnbHomePage.SEARCH_BUTTON)
+        );
 
     }
 }

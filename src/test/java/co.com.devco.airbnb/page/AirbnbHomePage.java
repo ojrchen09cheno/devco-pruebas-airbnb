@@ -16,7 +16,10 @@ public class AirbnbHomePage extends PageObject {
     public static final Target CHANGE_LANGUAGE_CURRENCY_BUTTON = Target.the("change language and currency button").locatedBy("//button[@aria-label='Choose a language and currency']");
     public static final Target EXPERIENCES_BUTTON = Target.the("experiences button").locatedBy("//span[@data-content='Experiences']");
     public static final Target EXPERIENCES_DATES_BUTTON = Target.the("experiences dates").locatedBy("//div[@data-testid='structured-search-input-field-dates-button']");
-
+    public static final Target SEARCH_BUTTON = Target.the("search button").locatedBy("//button[@data-testid='structured-search-input-search-button']");
+    public static final Target LANGUAGE_BUTTON = Target.the("change language to {0}").locatedBy("//div[text()='{0}']");
+    public static final Target CURRENCY_TAB = Target.the("currency tab").locatedBy("//button[@id='tab--language_region_and_currency--1']");
+    public static final Target CURRENCY_CHOICE_BUTTON = Target.the("currency of choice button").locatedBy("//div[text()='{0}']");
 
     public static Target BOTON_TODOS_SERVICIOS = Target.the("boton ver todos los servicios").locatedBy("//div[@data-section-id='AMENITIES_DEFAULT']//button[contains(text(), 'servicios')]");
 }
