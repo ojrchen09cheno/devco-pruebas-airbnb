@@ -5,5 +5,6 @@ Para ejecutar las pruebas, clonar el repositorio de git y en una terminal ejecut
 ~~~
 ./gradlew test
 ~~~
+El reporte de pruebas de Serenity se encuentra en /target/site/serenity/index.html
 
-El proyecto hace uso del framework de SerenityBDD para realizar pruebas automatizadas E2E a la pagina de airbnb con la ayuda de Cucumber para organizar las pruebas en lenguaje Gherkin y metodologia BDD. 
+El proyecto hace uso del framework de SerenityBDD para realizar pruebas automatizadas E2E a la pagina de airbnb con la ayuda de Cucumber para organizar las pruebas en lenguaje Gherkin, metodologia BDD y siguiendo el patron de Screenplay con POM.
