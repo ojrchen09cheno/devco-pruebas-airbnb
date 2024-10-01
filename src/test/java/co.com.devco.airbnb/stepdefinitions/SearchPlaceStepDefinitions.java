@@ -14,7 +14,6 @@ public class SearchPlaceStepDefinitions {
                 Ensure.that(PlaceResultsPage.PLACES_CARD.resolveAllFor(actor)).hasSizeGreaterThan(1)
         );
 
-        System.out.println(PlaceResultsPage.PLACES_CARD);
     }
 
 }

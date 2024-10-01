@@ -21,14 +21,14 @@ import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisi
 public class ChangeCurrencySteDefinitions {
 
     @When("{actor} tries to change his currency from {string} to {string}")
-    public void alexTriesToChangeHisCurrencyFromCOPToUSD(Actor actor, String prevCurrencyTemp, String currency) {
+    public void changeCurrencyDisplayed(Actor actor, String prevCurrencyTemp, String currency) {
         actor.attemptsTo(
                 ChangeCurrency.to(currency)
         );
     }
 
     @Then("{actor} should see the prices are in {string}")
-    public void alexShouldSeeThePricesAreIn(Actor actor, String currency) {
+    public void enureCurrencyTypeDisplayed(Actor actor, String currency) {
         actor.attemptsTo(
                 WaitUntil.the(PlaceResultsPage.DISPLAYED_CURRENCY, isVisible()),
                 Ensure.that(PlaceResultsPage.DISPLAYED_CURRENCY).text().contains(currency)

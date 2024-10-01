@@ -16,4 +16,5 @@ public class PlaceResultsPage extends PageObject {
     public static final Target DISPLAYED_CURRENCY = Target.the("displayed currency").locatedBy("//div[@data-testid='price-availability-row']//span[1]/span");
     public static final Target FILTER_BY_BOOKING_OPTION_TYPE = Target.the("filter by {0}").locatedBy("//span[text()='{0}']/..]");
     public static final Target FILTER_TITLE = Target.the("filter type title").locatedBy("//h2[@id][text()='Booking options']");
+    public static final Target FIRST_PLACE_WITH_REVIEWS = Target.the("first place with reviews").locatedBy("(//div[@data-testid='card-container' and .//*[contains(text(), 'reviews')]])[1]");
 }

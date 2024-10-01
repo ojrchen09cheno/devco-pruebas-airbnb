@@ -13,22 +13,25 @@ import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.actions.Switch;
 import net.serenitybdd.screenplay.ensure.Ensure;
 
-
-public class CheckAmenities {
-    public static Performable with(Actor actor, String filterType) {
+public class CheckResultWithReviews {
+    public static Performable andSortBy(String filterType) {
         return Task.where("check amenities",
-                Click.on(PlaceResultsPage.PLACES_CARD),
+                Scroll.to(PlaceResultsPage.FIRST_PLACE_WITH_REVIEWS),
+                Click.on(PlaceResultsPage.FIRST_PLACE_WITH_REVIEWS),
                 Wait.theSeconds(3),
                 Switch.toNewWindow(),
                 CloseTranslations.conditional(),
                 Wait.theSeconds(1),
-                Scroll.to(PlaceDetailsPage.SHOW_ALL_AMENITIES),
+                Scroll.to(PlaceDetailsPage.REVIEW_BUTTON),
                 Wait.theSeconds(1),
-                JavaScriptClick.on(PlaceDetailsPage.SHOW_ALL_AMENITIES),
+                JavaScriptClick.on(PlaceDetailsPage.REVIEW_BUTTON),
                 Wait.theSeconds(1),
-                Scroll.to(PlaceDetailsPage.OFFERED_AMENITIES.of(filterType)),
+                Click.on(PlaceDetailsPage.SORT_REVIEWS_BUTTON),
                 Wait.theSeconds(1),
-                Ensure.that(PlaceDetailsPage.OFFERED_AMENITIES.of(filterType)).isEnabled()
+                Click.on(PlaceDetailsPage.SORT_HIGHEST_RATED),
+                Wait.theSeconds(1)
         );
     }
 }
+
+

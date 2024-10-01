@@ -4,7 +4,9 @@ import co.com.devco.airbnb.interaction.Wait;
 import co.com.devco.airbnb.page.AirbnbHomePage;
 import co.com.devco.airbnb.task.ChooseExperience;
 import co.com.devco.airbnb.task.ChoosePlace;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.actions.Open;
@@ -23,7 +25,7 @@ public class CommonStepDefinitions {
     }
 
     @Given("{actor} opens the airbnb homepage")
-    public void mariaOpensTheAirbnbHomepage(Actor actor) {
+    public void openAirbnbHomepage(Actor actor) {
         actor.attemptsTo(
                 Open.browserOn().the(AirbnbHomePage.class),
                 // Waiting for page to load properly. Giving me stale element error
@@ -32,19 +34,21 @@ public class CommonStepDefinitions {
     }
 
     @When("{actor} searches for an experience in {string}")
-    public void mariaSearchesForAnExperience(Actor actor, String location) {
+    public void searchForExperiences(Actor actor, String location) {
         actor.attemptsTo(
                 ChooseExperience.with(location),
-                Wait.theSeconds(3)
+                Wait.theSeconds(5)
         );
     }
 
     @When("{actor} searches for a place to stay in {string}")
-    public void pabloSearchesForAPlaceToStay(Actor actor, String location) {
+    public void searchForStays(Actor actor, String location) {
         actor.attemptsTo(
                 ChoosePlace.with(location),
-                Wait.theSeconds(3)
+                Wait.theSeconds(5)
 
         );
     }
+
+
 }

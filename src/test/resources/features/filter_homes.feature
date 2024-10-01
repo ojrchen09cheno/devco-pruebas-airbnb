@@ -1,3 +1,4 @@
+@DONE
 Feature: Filter homes
 
   Scenario: Filter by allows pets

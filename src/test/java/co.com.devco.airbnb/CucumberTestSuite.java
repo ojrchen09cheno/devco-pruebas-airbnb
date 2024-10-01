@@ -8,6 +8,6 @@ import static io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME;
 @IncludeEngines("cucumber")
 @SelectClasspathResource("/features")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "io.cucumber.core.plugin.SerenityReporterParallel,pretty,timeline:build/test-results/timeline")
-@ExcludeTags({"MANUAL", "TODO", "DONE"})
+@ExcludeTags({"MANUAL", "TODO"})
 public class CucumberTestSuite {
 }
